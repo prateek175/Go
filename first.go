@@ -9,53 +9,59 @@ import (
 )
 
 func main() {
-	fmt.Println("////-Welcome To Our Calculator-////")
 
-	reader := bufio.NewReader(os.Stdin)
-	fmt.Println("Enter No. 1: ")
-	n1, _ := reader.ReadString('\n')
-	n2, _ := strconv.ParseFloat(strings.TrimSpace(n1), 64)
+	for i := 0; i < 2; i++ {
+		fmt.Println("   ")
 
-	reader1 := bufio.NewReader(os.Stdin)
-	fmt.Println("Enter Operation: ")
-	n3, _ := reader1.ReadString('\n')
-	n4 := strings.TrimSpace(n3)
+		fmt.Println("////-Welcome To Our Calculator-////")
 
-	reader2 := bufio.NewReader(os.Stdin)
-	fmt.Println("Enter No.2: ")
-	n5, _ := reader2.ReadString('\n')
-	n6, _ := strconv.ParseFloat(strings.TrimSpace(n5), 64)
+		fmt.Println("   ")
 
-	if n4 == "+" {
+		reader := bufio.NewReader(os.Stdin)
+		fmt.Println("Enter No. 1: ")
+		n1, _ := reader.ReadString('\n')
+		n2, _ := strconv.ParseFloat(strings.TrimSpace(n1), 64)
 
-		res := n2 + n6
+		reader1 := bufio.NewReader(os.Stdin)
+		fmt.Println("Enter Operation: ")
+		n3, _ := reader1.ReadString('\n')
+		n4 := strings.TrimSpace(n3)
 
-		fmt.Println("Result is: ", res)
+		reader2 := bufio.NewReader(os.Stdin)
+		fmt.Println("Enter No.2: ")
+		n5, _ := reader2.ReadString('\n')
+		n6, _ := strconv.ParseFloat(strings.TrimSpace(n5), 64)
 
-	} else {
-		fmt.Println("Error Enetr correct Opteration")
+		if n4 == "+" {
+
+			res := n2 + n6
+
+			fmt.Println("Result is: ", res)
+
+		} else {
+			fmt.Println("Error Enetr correct Opteration")
+		}
+		if n4 == "-" {
+
+			res := n2 - n6
+
+			fmt.Println("Result is: ", res)
+
+		}
+
+		if n4 == "*" {
+
+			res := n2 * n6
+
+			fmt.Println("Result is: ", res)
+
+		}
+		if n4 == "/" {
+
+			res := n2 / n6
+
+			fmt.Println("Result is: ", res)
+
+		}
 	}
-	if n4 == "-" {
-
-		res := n2 - n6
-
-		fmt.Println("Result is: ", res)
-
-	}
-
-	if n4 == "*" {
-
-		res := n2 * n6
-
-		fmt.Println("Result is: ", res)
-
-	}
-	if n4 == "/" {
-
-		res := n2 / n6
-
-		fmt.Println("Result is: ", res)
-
-	}
-
 }
